@@ -29,20 +29,10 @@ class BusStopTest < MiniTest::Test
   def test_empty_queue()
     @bus_stop.add_person_to_queue(@person1)
     @bus_stop.add_person_to_queue(@person1)
-    assert_equal(0, @bus_stop.empty_queue())
+    @bus_stop.empty_queue()
+    assert_equal(0, @bus_stop.queue.length())
   end
 
 
-  def test_pick_up_from_stop()
-    @bus_stop.add_person_to_queue(@person1)
-    @bus_stop.add_person_to_queue(@person1)
 
-      full_queue = @bus_stop.queue()
-      empty_queue()
-      @bus.pick_up_passenger(full_queue)
-      assert_equal(0 queue of the bus)
-      assert_equal(2, lenght of the passenger list of the bus)
-
-
-  end
 end

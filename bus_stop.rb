@@ -12,11 +12,12 @@ class BusStop
   end
 
   def empty_queue()
-    
-    @queue = []
+    @queue.clear
   end
 
-
+  def queue_lenght()
+    return @queue.size()
+  end
 
 
 
