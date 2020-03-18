@@ -25,6 +25,9 @@ def drop_off()
   return passenger
 end
 
+def empty_bus()
+  @passengers = []
+end
 
 
 end

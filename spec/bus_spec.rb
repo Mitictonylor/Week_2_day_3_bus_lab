@@ -1,4 +1,4 @@
-require('minitest/autorun')
+7f1d1ad1e6814a33f00d4cf0ee4d27ea102d4666require('minitest/autorun')
 require('minitest/reporters')
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
@@ -36,6 +36,13 @@ class BusTest < MiniTest::Test
   def test_drop_off()
     @bus.pick_up_passenger(@person)
     @bus.drop_off()
+    assert_equal(0, @bus.check_how_many_passengers())
+  end
+
+  def test_all_passengers_leave()
+    @bus.pick_up_passenger(@person)
+    @bus.pick_up_passenger(@person)
+    @bus.empty_bus()
     assert_equal(0, @bus.check_how_many_passengers())
   end
 
